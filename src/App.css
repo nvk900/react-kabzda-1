@@ -263,7 +263,7 @@
   display: block;
   color: rgba(0, 51, 102, 0.8);
   margin: 25px 0;
-  padding: 25px;
+  padding: 25px 0;
   min-height: 100px;
   background-color: rgba(255,255,255, 0.5);
 }
@@ -272,7 +272,7 @@
   height: 40px;
   max-width: 100%;
   overflow: hidden;
-  margin-bottom: 12px;
+  margin-bottom: 25px;
 }
 .avatarAutor{
   display: inline-block;
@@ -296,16 +296,21 @@
 }
 
 .postContent{
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 10px;
+  margin: 0 25px;
+  border-radius: 0;
 }
 .post .postImg{
+  display: block;
   max-width: 100%;
+  margin: 0 auto;
 }
 .postP{
   
   
+}
+.postBtns{
+  text-align: right;
+  margin-right: 25px;
 }
 
 .postBtns .btn{
