@@ -1,0 +1,34 @@
+/*Navigation*/
+
+.nav {
+  grid-area: n;
+  background-color: rgba(255,255,255, 0.5);
+  text-align: center;
+  padding-bottom: 25px;
+  border-radius: 10px;
+}
+.nav a{
+  color: rgba(0, 51, 102, 0.8);
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 25px;
+  text-decoration: none;
+  font-weight: bolder;
+}
+.nav a:hover{
+  color: rgba(255,255,255, .8);
+  background-color: rgba(0,0,0, .5);
+  border-radius: 10px;
+}
+.nav a:active{
+  color: rgba(255,255,255, 1);
+  background-color: rgba(0,0,0, 1);
+  border-radius: 5px;
+}
+.nav .active{
+  color: rgba(255,255,255, .8);
+  background-color: rgba(0,0,0, .2);
+  border-radius: 5px;
+}
