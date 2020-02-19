@@ -1,16 +1,13 @@
 import React from 'react';
-import PhotoPost from './../../img/fotoPost.jpg'
-import LikeIco from './../../img/like.svg';
-import DislikeIco from './../../img/dislike.svg';
-import RepostIco from './../../img/repost.svg';
-import Avatar from './../../img/avatar.jpg';
-import Style from './../../components/Post/Post.module.css';
+import PhotoPost from './../../../../img/fotoPost.jpg'
+import LikeIco from './../../../../img/like.svg';
+import DislikeIco from './../../../../img/dislike.svg';
+import RepostIco from './../../../../img/repost.svg';
+import Avatar from './../../../../img/avatar.jpg';
+import Style from './Post.module.css';
 
 // props - аргумент компоненты, передаются через атрибуты тега <teg atr='props' />
 const Post = (props) => { 
-
-	
-
 	return (
 		<div className={Style.post}>
 			<div className={Style.postContent}>
@@ -20,8 +17,10 @@ const Post = (props) => {
 					</div>
 					<p className={Style.nameAutor}>Иван Иванов</p>
 				</div>
-
-				<img className={Style.postImg} src={props.img} alt="Фоточка"/>
+				{
+					props.img ? <img className={Style.postImg} src={props.img} alt="Фоточка"/> : ''
+				}
+				{/* <img className={Style.postImg} src={props.img} alt="Фоточка"/>*/}
 				<p className={Style.postP}>
 					{props.message}
 				</p>

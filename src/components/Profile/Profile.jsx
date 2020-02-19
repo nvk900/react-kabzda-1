@@ -1,10 +1,10 @@
 import React from 'react';
-import Shapka from './../../components/Shapka/Shapka';
-import Posts from './../../components/Posts/Posts';
+import Shapka from './Shapka/Shapka';
+import Posts from './Posts/Posts';
 import Style from './Profile.module.css';
 
 
-const Profile = () => {
+const Profile = (props) => {
 	return(
 		<div>
 			<Shapka />

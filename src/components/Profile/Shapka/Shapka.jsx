@@ -1,9 +1,9 @@
 import React from 'react';
 import Style from './Shapka.module.css'
-import ShapkaImg from './../../shapka.jpg';
-import ShapkaImg2 from './../../shapka2.jpg';
-import Avatar from './../../img/avatar.jpg';
-import AddDiscription from './../../img/create-24px.svg';
+import ShapkaImg from './../../../img/shapka.jpg';
+import ShapkaImg2 from './../../../img/shapka2.jpg';
+import Avatar from './../../../img/avatar.jpg';
+import AddDiscription from './../../../img/create-24px.svg';
 
 const Shapka = () => {
 	return(

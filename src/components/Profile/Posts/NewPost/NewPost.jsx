@@ -1,7 +1,7 @@
 import React from 'react';
 import Style from './NewPost.module.css';
 
-const NewPost = () => {
+const NewPost = (props) => {
 	return (
 		<div id={Style.newPosts}>
 			<h3>Новый пост</h3>
