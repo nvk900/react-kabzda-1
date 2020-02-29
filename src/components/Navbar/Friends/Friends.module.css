@@ -1,0 +1,42 @@
+/*Friends*/
+.navFriends{
+  margin-top: 50px;
+  color: rgba(0, 51, 102, 0.8);
+}
+.navFriend{
+  color: rgba(0, 51, 102, 0.8);
+  display: inline-block;
+  width: 33%;
+  overflow: hidden;
+  text-align: center;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 10px;
+  text-decoration: none;
+}
+h4{
+  cursor: pointer;
+}
+.navFriend:hover{
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .8);
+}
+.navFriend:hover .friendName{
+  color: rgba(255,255,255, 1);
+}
+.navFriend:hover .friendAvatar{
+  opacity: 1;
+}
+.navFriendBlock{
+  margin: 5px;
+}
+.friendAvatar{
+  opacity: .6;
+  width: 95%;
+  border-radius: 10px;
+}
+.friendName{
+  text-align: center;
+  font-size: .7em;
+  font-weight: bold;
+}

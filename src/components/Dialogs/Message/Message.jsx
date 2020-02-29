@@ -2,10 +2,16 @@ import React from 'react';
 import Style from './../Dialogs.module.css';
 
 const MessagesItem = (props) => {
+	let	styleMessage = Style.me;
+	if (props.from == 'i'){
+		styleMessage = Style.i;
+	} 
 
 	return(
-		<div className={Style.message}>
-			{props.message}
+		<div className={Style.messageBlock}>
+			<div className={`${Style.message} ${styleMessage}`}>
+				{props.message}
+			</div>
 		</div>
 		)
 	}
