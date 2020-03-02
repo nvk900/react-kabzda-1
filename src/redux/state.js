@@ -1,5 +1,3 @@
-import {rerenderEntireTree} from './../render';
-
 let state = {
 
 	profilePage: {
@@ -22,7 +20,8 @@ let state = {
 			{id: '5', likesCounts: 950, img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTf7rTWx6-owpwdoSZg8kQ3UCgJWpTClzX9QIYrGXNFIqGq7M2Z', message: 'Darovenko'},
 			{id: '6', likesCounts: 250, img:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTnfy3B_Qp6ZShrVpR4nXr1ZBO9EMdgZVx4iWpW4JPDK9fBHrdZ', message: 'Dratuti'},
 			{id: '7', likesCounts: 350, img:'', message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis ratione, eius provident repudiandae at fugit, tempora? At temporibus, minima, commodi ex enim voluptate doloribus non minus, cupiditate aliquam quidem facere!'}
-		]
+		],
+		newPostText: 'Какой то текст для поста'
 	},
 	dialogsPage: {
 		dialogs: [
@@ -62,16 +61,32 @@ let state = {
 	}
 }
 
-export let addPost = (postMessage) => {
-	let idNewPost = state.profilePage.posts.length - 1
+window.state = state;
+
+let rerenderEntireTree = () => {
+	console.log('State changed');
+}
+
+export const addPost = () => {
+	let idNewPost = state.profilePage.posts.length + 1; 
 	let newPost = {
 		id: idNewPost, 
 		likesCounts: 0, 
 		img:'', 
-		message: postMessage
+		message: state.profilePage.newPostText
 	}
 	state.profilePage.posts.push(newPost);
+	state.profilePage.newPostText = '';
 	rerenderEntireTree(state);
+}
+
+export const updateNewPostText = (newText) => {
+	state.profilePage.newPostText = newText;
+	rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) =>{
+	rerenderEntireTree = observer; //Наблюдатель паттерн
 }
 
 export default state;

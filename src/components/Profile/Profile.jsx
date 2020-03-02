@@ -4,10 +4,14 @@ import Posts from './Posts/Posts';
 import Style from './Profile.module.css';
 
 const Profile = (props) => {
+
 	return(
 		<div>
-			<Shapka users={props.state.users[0]}/>
-			<Posts posts={props.state.posts} addPost={props.addPost}/>
+			<Shapka users={props.profilePage.users[0]}/>
+			<Posts posts={props.profilePage.posts} 
+				newPostText={props.profilePage.newPostText}
+				updateNewPostText={props.updateNewPostText}
+				addPost={props.addPost}/>
 		</div>)
 }
 

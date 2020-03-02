@@ -24,6 +24,7 @@ const Post = (props) => {
 				<p className={Style.postP}>
 					{props.message}
 				</p>
+				<p>{props.id}</p>
 				
 			</div>
 			
