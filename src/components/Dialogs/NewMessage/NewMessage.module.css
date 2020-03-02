@@ -1,0 +1,49 @@
+.newMessageBlock{
+  color: rgba(0, 51, 102, 0.8);
+  min-height: 50px;
+  background-color: rgba(255,255,255, 0.5);
+  width: 100%;
+  position: relative;
+  bottom: 0;
+
+}
+.newMessageBlock h3{
+  padding-left: 25px;
+  padding-top: 25px;
+}
+.textareaBlock{
+  width: 100%;
+}
+.textareaBlock textarea {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin: 25px auto;
+  width: 95%;
+  border: 1px solid rgba(0,0,0, .1);
+  opacity: .4;
+  resize: none;
+}
+.textareaBlock textarea:focus {
+  opacity: 1;
+}
+.newMessageBlock button{
+  border-radius: 10px;
+  padding: 10px;
+  color: rgba(0, 51, 102, .8);
+  font-weight: bolder;
+  background-color: rgba(255,255,255, .5);
+  border: 4px solid rgba(0,0,0, .5);
+  margin: 0 25px 25px 25px;
+}
+.newMessageBlock button:hover{
+  color: rgba(255,255,255, .8);
+  background-color: rgba(0,0,0, .5);
+  cursor: pointer;
+  border: 4px solid #000;
+}
+.newMessageBlock button:active{
+  background-color: rgba(255,255,255, .5);
+  color: rgba(0, 51, 102, .8);
+  border: 4px solid #fff;
+}

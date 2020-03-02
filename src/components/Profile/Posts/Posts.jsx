@@ -14,7 +14,7 @@ const Posts = (props) => {
 
 	return (
 		<div id={Style.posts}>
-			<NewPost />
+			<NewPost addPost={props.addPost}/>
 			<div id={Style.postsBlock}>
 				{postsElements}
 			</div>

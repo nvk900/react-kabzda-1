@@ -6,8 +6,8 @@ import Style from './Profile.module.css';
 const Profile = (props) => {
 	return(
 		<div>
-			<Shapka />
-			<Posts posts={props.state.posts}/>
+			<Shapka users={props.state.users[0]}/>
+			<Posts posts={props.state.posts} addPost={props.addPost}/>
 		</div>)
 }
 

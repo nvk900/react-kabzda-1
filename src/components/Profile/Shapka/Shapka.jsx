@@ -1,29 +1,30 @@
 import React from 'react';
 import Style from './Shapka.module.css'
-import ShapkaImg from './../../../img/shapka.jpg';
-import ShapkaImg2 from './../../../img/shapka2.jpg';
-import Avatar from './../../../img/avatar.jpg';
 import AddDiscription from './../../../img/create-24px.svg';
+import ShapkaImg from './../../../img/shapka.jpg';
+// import ShapkaImg2 from './../../../img/shapka2.jpg';
+// import Avatar from './../../../img/avatar.jpg';
 
-const Shapka = () => {
+
+const Shapka = (props) => {
 	return(
 		<div  id={Style.shapka}>
-			<img  id={Style.shapkaImg} src={ShapkaImg} alt="шапка ёпта"/>
+			<img  id={Style.shapkaImg} src={ShapkaImg} alt={props.users.firstName}/>
 			<div id={Style.avatar}>
-				<img id={Style.avatarImg} src={Avatar} alt="Аватврка" />
+				<img id={Style.avatarImg} src={props.users.avatar} alt={props.users.firstName} />
 				<div id={Style.addAvatar}>
 					<p>+</p>
 				</div>
 			</div>
 			<div id={Style.personal}>
 				<p id={Style.firstName}>
-					Иван
+					{props.users.firstName}
 				</p>
 				<p id={Style.lastName}>
-					Иванов
+					{props.users.lastName}
 				</p>
 				<p id={Style.status}>
-					Обычный парень который есть везде
+					{props.users.status}
 				</p>
 			</div>
 			<div id={Style.discription}>
@@ -31,7 +32,7 @@ const Shapka = () => {
 					<img src={AddDiscription} alt=""/>
 				</div>
 				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae dolore corrupti velit qui porro ut ab nostrum labore, aliquam numquam culpa harum esse consequuntur quidem error nulla! Nam, expedita, eveniet.	
+					{props.users.discript}
 				</p>
 				
 			</div>

@@ -17,6 +17,7 @@ body{
   -ms-transition: all 0s;
   -o-transition: all 0s;
   transition: all 0s;
+  
 }
 #blur {
   -webkit-transition: all 0s;
