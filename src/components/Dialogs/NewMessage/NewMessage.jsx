@@ -1,19 +1,28 @@
 import React from 'react';
 import Style from './NewMessage.module.css';
+import {addMessageActionCreator, updateNewMessageTextActionCreator} from './../../../redux/dialogsReducer';
 
 const NewMessage = (props) => {
-	let newMessageElement = React.createRef(); //Ссылка на обьект jsx
+	
 
 	let addMessage = () => {
-		let text = newMessageElement.current.value; //обращение к DOM элементу напрямую (нужно обращаться к virtualDOM)
-		alert(text);
+		let action = addMessageActionCreator();
+		props.dispatch(action);
+	}
+	let onMessageChange = (e) => {
+		let text = e.target.value;
+		let action = updateNewMessageTextActionCreator(text);
+		props.dispatch(action);
 	}
 
 	return(
 		<div className={Style.newMessageBlock}>
 			<h3>Cообщение</h3>
 			<div className={Style.textareaBlock}>
-				<textarea ref={newMessageElement} rows="5" name="text"></textarea>
+				<textarea onChange={onMessageChange}
+					rows="5" 
+					value={props.newMessageText} 
+					placeholder='Введите сообщение'/>
 			</div>
 			
 			<button>Добавить фото</button>

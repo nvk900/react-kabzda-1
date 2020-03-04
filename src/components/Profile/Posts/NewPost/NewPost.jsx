@@ -1,24 +1,27 @@
 import React from 'react';
 import Style from './NewPost.module.css';
+import {addPostActionCreator, updateNewPostTextActionCreator} from './../../../../redux/profileReducer';
 
 const NewPost = (props) => {
-	
-	let newPostElement = React.createRef(); //Ссылка на обьект jsx
+		
 	let addPost = () => {
-		let text = newPostElement.current.value; //обращение к DOM элементу напрямую (нужно обращаться к virtualDOM)
-		props.addPost();
+		let action = addPostActionCreator()
+		props.dispatch(action);
 	}
-	let onPostCHange = () => {
-		let text = newPostElement.current.value;
-		props.updateNewPostText(text);
+	
+	let onPostCHange = (e) => {
+		let text = e.target.value;
+		let action = updateNewPostTextActionCreator(text)
+		props.dispatch(action);
 	}
 
 	return (
 		<div id={Style.newPosts}>
 			<h3>Новый пост</h3>
 			<textarea onChange={onPostCHange} 
-				ref={newPostElement} rows="5" 
-				value={props.newPostText}/>
+				rows="5" 
+				value={props.newPostText}
+				placeholder='Введите текст поста'/>
 			<button>Добавить фото</button>
 			<button onClick={addPost} >Опубликовать</button>
 		</div>

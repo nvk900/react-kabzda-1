@@ -14,9 +14,8 @@ const Posts = (props) => {
 
 	return (
 		<div id={Style.posts}>
-			<NewPost addPost={props.addPost} 
-			newPostText={props.newPostText}
-			updateNewPostText={props.updateNewPostText}/>
+			<NewPost newPostText={props.newPostText}
+				dispatch={props.dispatch}/>
 			<div id={Style.postsBlock}>
 				{postsElements}
 			</div>
