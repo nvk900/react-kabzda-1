@@ -68,11 +68,11 @@ let store = {
 	getState() {
 		return this._state;
 	},
-	_rerenderEntireTree() {
+	_callSubscriber() {
 		console.log('State changed');
 	},
 	subscribe(observer) {
-		this._rerenderEntireTree = observer; //Наблюдатель паттерн
+		this._callSubscriber = observer; //Наблюдатель паттерн
 	},
 
 	dispatch(action) { // {type: 'ADD-POST'}
@@ -83,7 +83,7 @@ let store = {
 
 		this._state.sidebar = sidebarReducer(this._state.sidebar, action);
 
-		this._rerenderEntireTree(this._state);
+		this._callSubscriber(this._state);
 	}
 }
 
