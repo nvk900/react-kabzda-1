@@ -2,10 +2,10 @@ import React from 'react';
 import Post from './Post/Post'
 import Post2 from './Post/Post2'
 import NewPost from './NewPost/NewPost'
+import NewPostContainer from './NewPost/NewPostContainer'
 import Style from './Posts.module.css'
 
 const Posts = (props) => {
-
 	// Принимаем posts
 		
 	let postsElements = props.posts.map ( ( p ) => (
@@ -14,8 +14,10 @@ const Posts = (props) => {
 
 	return (
 		<div id={Style.posts}>
-			<NewPost newPostText={props.newPostText}
-				dispatch={props.dispatch}/>
+			<NewPostContainer 
+				store={props.store}
+				dispatch={props.dispatch}
+			/>
 			<div id={Style.postsBlock}>
 				{postsElements}
 			</div>
